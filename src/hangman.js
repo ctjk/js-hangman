@@ -1,5 +1,3 @@
-'use strict' 
-
 class Hangman {
     constructor(word, remainingGuesses) {
         this.word = word.toLowerCase().split('')
@@ -29,7 +27,7 @@ class Hangman {
         }
         
         if (isUnique) {
-            this.guessedLetters.push(guess)
+            this.guessedLetters = [...this.guessedLetters, guess]
         }
         if (isUnique && !this.word.includes(guess)) {
             this.remainingGuesses--

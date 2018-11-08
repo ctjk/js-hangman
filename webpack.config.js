@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-    entry: ["babel-polyfill", "./src/index.js"],            
+    entry: ["babel-polyfill", "./src/index.js"],        
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, "public/scripts")     
@@ -11,16 +11,17 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules/,
             use: {
-                loader: 'babel-loader',
+                loader: "babel-loader",
                 options: {
-                    presets: ['env']
+                    presets: ["env"],
+                    plugins: ["transform-object-rest-spread"]
                 }
             }
         }]
     },
     devServer: {
         contentBase: path.resolve(__dirname, "public"),     
-        publicPath: '/scripts/'
+        publicPath: "/scripts/"
     },
-    devtool: 'source-map'
+    devtool: "source-map"
 }

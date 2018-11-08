@@ -1,5 +1,3 @@
-'use strict'
-
 import Hangman from './hangman'
 import {getPuzzle} from './requests'
 
